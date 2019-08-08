@@ -17,7 +17,8 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="360"/>
+            <RowDefinition Height="340"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
         <!-- Title map-->
@@ -43,6 +44,12 @@
         <!-- Empty -->
         <Grid Grid.Row="4" Grid.Column="1" Background="White">
             
+
+        </Grid>
+
+        <!-- Status Bar -->
+        <Grid Grid.Row="6" Grid.Column="0" Margin="1" Grid.ColumnSpan="2" Background="Red">
+
 
         </Grid>
 
