@@ -5,8 +5,80 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhotoConverterUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Photo Converter" Height="600" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="580"/>
+            <ColumnDefinition Width="220"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="360"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title map-->
+        <Grid Grid.Row="0" Grid.Column="0" Background="Black">
+            <Label  Content="PHOTO CONVERTER" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFB6B6B6" />
+        </Grid>
+        <!-- Title selection-->
+        <Grid Grid.Row="0" Grid.Column="1" Background="Black">
+            <Label  Content="SELECTION" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFB6B6B6" />
+        </Grid>
+        <!-- Load select photos-->
+        <Grid Grid.Row="1" Grid.Column="1" Background="Black">
+            <Button Name="Selectphotos" Margin="1" Content="Select photos" FontWeight="Bold" FontSize="18"  Background="#FFF1EDED"/>
+        </Grid>
+        <!-- Convert photos -->
+        <Grid Grid.Row="2" Grid.Column="1" Background="Black">
+            <Button Name="Convertphotos" Margin="1" Content="Convert !" FontWeight="Bold" FontSize="18"  Background="#FFF1EDED" />
+        </Grid>
+        <!-- Open saved location -->
+        <Grid Grid.Row="3" Grid.Column="1" Background="Black">
+            <Button Name="Opensaved" Margin="1" Content="Open saved location" FontWeight="Bold" FontSize="18"  Background="#FFF1EDED" />
+        </Grid>
+        <!-- Empty -->
+        <Grid Grid.Row="4" Grid.Column="1" Background="White">
+            
+
+        </Grid>
+
+
+        <!-- Photo window-->
+        <Grid Grid.Row="1" Grid.Column="0" Background="Black" Grid.RowSpan="5">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Photo 1-->
+            <Grid Grid.Row="0" Grid.Column="0" Background="Black">
+                <Label  Content="PHOTO 1" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFB6B6B6" />
+            </Grid>
+
+            <!-- Photo 2-->
+            <Grid Grid.Row="0" Grid.Column="1" Background="Black">
+                <Label  Content="PHOTO 2" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFB6B6B6" />
+            </Grid>
+
+            <!-- Photo 3-->
+            <Grid Grid.Row="1" Grid.Column="0" Background="Black">
+                <Label  Content="PHOTO 3" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFB6B6B6" />
+            </Grid>
+
+            <!-- Photo 4-->
+            <Grid Grid.Row="1" Grid.Column="1" Background="Black">
+                <Label  Content="PHOTO 4" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFB6B6B6" />
+            </Grid>
+
+        </Grid>
     </Grid>
 </Window>
