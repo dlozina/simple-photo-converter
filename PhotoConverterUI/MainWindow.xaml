@@ -29,23 +29,23 @@
         <Grid Grid.Row="0" Grid.Column="1" Background="Black">
             <Label  Content="SELECTION" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFB6B6B6" />
         </Grid>
-        <!-- Load select photos-->
+        <!-- Load selected photos-->
         <Grid Grid.Row="1" Grid.Column="1" Background="Black">
-            <Button Name="Selectphotos" Margin="1" Content="Select photos" FontWeight="Bold" FontSize="18"  Background="#FFF1EDED"/>
+            <Button Name="Selectphotos" Margin="1" Content="Select photos" FontWeight="Bold" FontSize="18"  Background="#FFF1EDED" Click="Selectphotos_Click"/>
+        </Grid>
+        <!-- Cancel selection photos-->
+        <Grid Grid.Row="2" Grid.Column="1" Background="Black">
+            <Button Name="Cancelselection" Margin="1" Content="Cancel selection" FontWeight="Bold" FontSize="18"  Background="#FFF1EDED" Click="Cancelselection_Click" />
         </Grid>
         <!-- Convert photos -->
-        <Grid Grid.Row="2" Grid.Column="1" Background="Black">
+        <Grid Grid.Row="3" Grid.Column="1" Background="Black">
             <Button Name="Convertphotos" Margin="1" Content="Convert !" FontWeight="Bold" FontSize="18"  Background="#FFF1EDED" />
         </Grid>
         <!-- Open saved location -->
-        <Grid Grid.Row="3" Grid.Column="1" Background="Black">
+        <Grid Grid.Row="4" Grid.Column="1" Background="Black">
             <Button Name="Opensaved" Margin="1" Content="Open saved location" FontWeight="Bold" FontSize="18"  Background="#FFF1EDED" />
         </Grid>
-        <!-- Empty -->
-        <Grid Grid.Row="4" Grid.Column="1" Background="White">
-            
-
-        </Grid>
+        
 
         <!-- Status Bar -->
         <Grid Grid.Row="6" Grid.Column="0" Margin="1" Grid.ColumnSpan="2" Background="Red">
@@ -67,23 +67,27 @@
             </Grid.RowDefinitions>
 
             <!-- Photo 1-->
-            <Grid Grid.Row="0" Grid.Column="0" Background="Black">
-                <Label  Content="PHOTO 1" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFB6B6B6" />
+            <Grid Grid.Row="0" Grid.Column="0" Margin="1" Background="Black">
+                <Label  Content="Select photo 1" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="AntiqueWhite" />
+                <Image  Name="ImgPhoto1" Stretch="Fill" />
             </Grid>
 
             <!-- Photo 2-->
-            <Grid Grid.Row="0" Grid.Column="1" Background="Black">
-                <Label  Content="PHOTO 2" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFB6B6B6" />
+            <Grid Grid.Row="0" Grid.Column="1" Margin="1" Background="Black">
+                <Label  Content="Select photo 2" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="AntiqueWhite" />
+                <Image  Name="ImgPhoto2" Stretch="Fill" />
             </Grid>
 
             <!-- Photo 3-->
-            <Grid Grid.Row="1" Grid.Column="0" Background="Black">
-                <Label  Content="PHOTO 3" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFB6B6B6" />
+            <Grid Grid.Row="1" Grid.Column="0" Margin="1" Background="Black">
+                <Label  Content="Select photo 3" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="AntiqueWhite" />
+                <Image  Name="ImgPhoto3" Stretch="Fill" />
             </Grid>
 
             <!-- Photo 4-->
-            <Grid Grid.Row="1" Grid.Column="1" Background="Black">
-                <Label  Content="PHOTO 4" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFB6B6B6" />
+            <Grid Grid.Row="1" Grid.Column="1" Margin="1" Background="Black">
+                <Label  Content="Select photo 4" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="AntiqueWhite" />
+                <Image  Name="ImgPhoto4" Stretch="Fill" />
             </Grid>
 
         </Grid>

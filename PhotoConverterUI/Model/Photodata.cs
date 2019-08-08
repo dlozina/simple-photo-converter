@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace PhotoConverterUI.Model
 {
-    class Photodata
+     public class Photodata
     {
-        public string image1 { get; set; }
-        public string image2 { get; set; }
-        public string image3 { get; set; }
-        public string image4 { get; set; }
+        public string image1path { get; set; }
+        public string image2path { get; set; }
+        public string image3path { get; set; }
+        public string image4path { get; set; }
     }
 }

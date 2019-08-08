@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using PhotoConverterUI.Model;
 
 namespace PhotoConverterUI
 {
@@ -13,5 +14,13 @@ namespace PhotoConverterUI
     /// </summary>
     public partial class App : Application
     {
+
+        public static Photodata photodata;
+
+        public App()
+        {
+            photodata = new Photodata();
+        }
+
     }
 }
