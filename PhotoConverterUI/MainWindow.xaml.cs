@@ -121,6 +121,7 @@ namespace PhotoConverterUI
         // Test upload to server
         private void Convertphotos_Click(object sender, RoutedEventArgs e)
         {
+            
             // Clear converted selection
             ImgPhoto1.Source = new BitmapImage();
             ImgPhoto2.Source = new BitmapImage();
@@ -128,6 +129,8 @@ namespace PhotoConverterUI
             ImgPhoto4.Source = new BitmapImage();
 
             Boolean uploadStatus = false;
+            // Number of files to be send
+            int fileNumber = App.photodata.photopath.Count();
    
             foreach (String localFilename in App.photodata.photopath)
                 {
@@ -135,16 +138,20 @@ namespace PhotoConverterUI
                     string filePath = @"\";
                     Random rnd = new Random();
                     string uploadFileName = "Imag" + rnd.Next(9999).ToString();
-                    uploadStatus = Upload(url, filePath, localFilename, uploadFileName);
+                    uploadStatus = Upload(url, filePath, localFilename, uploadFileName, fileNumber);
                 }
 
             if (uploadStatus)
             {
+                // Write empty string to reset choice
+                App.photodata.photopath.Clear();
                 // Change to status bar
                 MessageBox.Show("File Uploaded");
             }
             else
             {
+                // Write empty string to reset choice
+                App.photodata.photopath.Clear();
                 // Change to status bar
                 MessageBox.Show("File Not Uploaded");
             }
@@ -155,7 +162,7 @@ namespace PhotoConverterUI
         // url= "http://localhost:52683/api/PhotoConvert";  
         // localFilename = "c:\newProduct.jpg"   
         //uploadFileName="newFileName"  
-        bool Upload(string url, string filePath, string localFilename, string uploadFileName)
+        bool Upload(string url, string filePath, string localFilename, string uploadFileName, int fileNumber)
         {
             Boolean isFileUploaded = false;
 
@@ -170,8 +177,8 @@ namespace PhotoConverterUI
 
                 MultipartFormDataContent content = new MultipartFormDataContent();
                 content.Headers.Add("filePath", filePath);
-                content.Add(new StreamContent(fileStream), "\"file\"", string.Format("\"{0}\"", uploadFileName + fileInfo.Extension)
-                        );
+                content.Headers.Add("fileNumber", fileNumber.ToString());
+                content.Add(new StreamContent(fileStream), "\"file\"", string.Format("\"{0}\"", uploadFileName + fileInfo.Extension));
 
                 Task taskUpload = httpClient.PostAsync(url, content).ContinueWith(task =>
                 {
@@ -201,6 +208,8 @@ namespace PhotoConverterUI
             }
             catch (Exception ex)
             {
+                // Write empty string
+                
                 isFileUploaded = false;
             }
 
