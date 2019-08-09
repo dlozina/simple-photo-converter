@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace PhotoConverterUI.Model
 {
-    public class Photodata
+    public class Photoupload
     {
-        public List<string> photopath { get; set; }
+        public string FilePath { get; set; }
+        public string FileName { get; set; }
+        public long FileLength { get; set; }
     }
 }

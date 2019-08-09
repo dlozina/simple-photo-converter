@@ -20,6 +20,7 @@ namespace PhotoConverterUI
         public App()
         {
             photodata = new Photodata();
+            photodata.photopath = new List<string>();
         }
 
     }

@@ -39,7 +39,7 @@
         </Grid>
         <!-- Convert photos -->
         <Grid Grid.Row="3" Grid.Column="1" Background="Black">
-            <Button Name="Convertphotos" Margin="1" Content="Convert !" FontWeight="Bold" FontSize="18"  Background="#FFF1EDED" />
+            <Button Name="Convertphotos" Margin="1" Content="Convert !" FontWeight="Bold" FontSize="18"  Background="#FFF1EDED" Click="Convertphotos_Click" />
         </Grid>
         <!-- Open saved location -->
         <Grid Grid.Row="4" Grid.Column="1" Background="Black">
