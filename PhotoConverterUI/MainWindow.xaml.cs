@@ -158,17 +158,23 @@ namespace PhotoConverterUI
                 // Write empty string to reset choice
                 App.photodata.photopath.Clear();
                 // Change to status bar
-                sbStatus.Text = "File Converted";
+                sbStatus.Text = "Status: File Converted";
                 sbPathDisplay.Text = "Converted file saved od disk! (To access photo press button open saved location)";
                 Opensaved.IsEnabled = true;
+                //sbStatus.Text = "Status: Ready to convert";
             }
             else
             {
                 // Write empty string to reset choice
                 App.photodata.photopath.Clear();
                 // Change to status bar
-                sbStatus.Text = "File not Converted";
+                sbStatus.Text = "Status: File not Converted";
+                sbPathDisplay.Text = "None of the files is saved on a disk!";
+                //sbStatus.Text = "Status: Ready to convert";
             }
+
+            Cancelselection.IsEnabled = false;
+            Convertphotos.IsEnabled = false;
         }
 
 
