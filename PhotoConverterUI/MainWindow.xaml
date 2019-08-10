@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhotoConverterUI"
         mc:Ignorable="d"
-        Title="Photo Converter" Height="600" Width="800">
+        Title="Photo Converter" Height="580" Width="800" 
+        ResizeMode="NoResize"  
+        WindowStartupLocation="CenterScreen" 
+        >
     <Grid>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="580"/>
             <ColumnDefinition Width="220"/>
@@ -17,7 +21,7 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="340"/>
+            <RowDefinition Height="320"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
@@ -45,14 +49,34 @@
         <Grid Grid.Row="4" Grid.Column="1" Background="Black">
             <Button Name="Opensaved" Margin="1" Content="Open saved location" FontWeight="Bold" FontSize="18"  Background="#FFF1EDED" Click="Opensaved_Click" />
         </Grid>
-        
-
-        <!-- Status Bar -->
-        <Grid Grid.Row="6" Grid.Column="0" Margin="1" Grid.ColumnSpan="2" Background="Red">
-
+     
+        <!-- Right of photo display -->
+        <Grid Grid.Row="5" Grid.Column="1" Margin="0" Grid.ColumnSpan="2" Background="#FFF1EDED">
 
         </Grid>
-
+        <!-- Status bar -->
+        <StatusBar Grid.Row="6" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Bottom" Margin="0">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" MinWidth="5" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <StatusBarItem>
+                <TextBlock x:Name="sbStatus" Text="Status: Ready to convert" />
+            </StatusBarItem>
+            <Separator Grid.Column="1" />
+            <StatusBarItem Grid.Column="2" HorizontalAlignment="Left" Width="580">
+                <TextBlock x:Name="sbPathDisplay" Text="Conversion not done!" TextWrapping="Wrap" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Left"  />
+            </StatusBarItem>
+        </StatusBar>
+        
 
         <!-- Photo window-->
         <Grid Grid.Row="1" Grid.Column="0" Background="Black" Grid.RowSpan="5">

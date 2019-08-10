@@ -31,6 +31,9 @@ namespace PhotoConverterUI
             InitializeComponent();
             // Enable after conversion
             Opensaved.IsEnabled = false;
+            // Enable after selection
+            Cancelselection.IsEnabled = false;
+            Convertphotos.IsEnabled = false;
         }
 
         private Photoupload uploadResult = null;
@@ -108,10 +111,16 @@ namespace PhotoConverterUI
             {
                 // Check if needed
             }
+            // Enable Convert Button
+            Cancelselection.IsEnabled = true;
+            Convertphotos.IsEnabled = true;
         }
 
         private void Cancelselection_Click(object sender, RoutedEventArgs e)
         {
+            // Disable convert photos
+            Cancelselection.IsEnabled = false;
+            Convertphotos.IsEnabled = false;
             // Write empty string
             App.photodata.photopath.Clear();
             // Update UI
@@ -149,8 +158,8 @@ namespace PhotoConverterUI
                 // Write empty string to reset choice
                 App.photodata.photopath.Clear();
                 // Change to status bar
-                MessageBox.Show("File Converted");
-                MessageBox.Show(uploadResult.FilePath);
+                sbStatus.Text = "File Converted";
+                sbPathDisplay.Text = "Converted file saved od disk! (To access photo press button open saved location)";
                 Opensaved.IsEnabled = true;
             }
             else
@@ -158,7 +167,7 @@ namespace PhotoConverterUI
                 // Write empty string to reset choice
                 App.photodata.photopath.Clear();
                 // Change to status bar
-                MessageBox.Show("File Not Converted");
+                sbStatus.Text = "File not Converted";
             }
         }
 
