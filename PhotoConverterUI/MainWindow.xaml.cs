@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -28,9 +29,11 @@ namespace PhotoConverterUI
         public MainWindow()
         {
             InitializeComponent();
+            // Enable after conversion
+            Opensaved.IsEnabled = false;
         }
 
-        
+        private Photoupload uploadResult = null;
 
         private void Selectphotos_Click(object sender, RoutedEventArgs e)
         {
@@ -146,14 +149,16 @@ namespace PhotoConverterUI
                 // Write empty string to reset choice
                 App.photodata.photopath.Clear();
                 // Change to status bar
-                MessageBox.Show("File Uploaded");
+                MessageBox.Show("File Converted");
+                MessageBox.Show(uploadResult.FilePath);
+                Opensaved.IsEnabled = true;
             }
             else
             {
                 // Write empty string to reset choice
                 App.photodata.photopath.Clear();
                 // Change to status bar
-                MessageBox.Show("File Not Uploaded");
+                MessageBox.Show("File Not Converted");
             }
         }
 
@@ -172,14 +177,14 @@ namespace PhotoConverterUI
 
                 var fileStream = File.Open(localFilename, FileMode.Open);
                 var fileInfo = new FileInfo(localFilename);
-                Photoupload uploadResult = null;
+                //Photoupload uploadResult = null;
                 bool _fileUploaded = false;
 
                 MultipartFormDataContent content = new MultipartFormDataContent();
                 content.Headers.Add("filePath", filePath);
                 content.Headers.Add("fileNumber", fileNumber.ToString());
                 content.Add(new StreamContent(fileStream), "\"file\"", string.Format("\"{0}\"", uploadFileName + fileInfo.Extension));
-
+                // My Post
                 Task taskUpload = httpClient.PostAsync(url, content).ContinueWith(task =>
                 {
                     if (task.Status == TaskStatus.RanToCompletion)
@@ -188,6 +193,7 @@ namespace PhotoConverterUI
 
                         if (response.IsSuccessStatusCode)
                         {
+                            // My Response
                             uploadResult = response.Content.ReadAsAsync<Photoupload>().Result;
                             if (uploadResult != null)
                             {
@@ -214,6 +220,12 @@ namespace PhotoConverterUI
             }
 
             return isFileUploaded;
+        }
+
+        private void Opensaved_Click(object sender, RoutedEventArgs e)
+        {
+            //Process.Start(uploadResult.FilePath);
+            Process.Start("explorer.exe", "/select," + uploadResult.FilePath);
         }
     }
 }
