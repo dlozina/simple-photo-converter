@@ -145,13 +145,13 @@ namespace PhotoConverterUI
             int fileNumber = App.photodata.photopath.Count();
    
             foreach (String localFilename in App.photodata.photopath)
-                {
-                    string url = "http://localhost:52683/api/PhotoConvert";
-                    string filePath = @"\";
-                    Random rnd = new Random();
-                    string uploadFileName = "Imag" + rnd.Next(9999).ToString();
-                    uploadStatus = Upload(url, filePath, localFilename, uploadFileName, fileNumber);
-                }
+            {
+                string url = "http://localhost:52683/api/PhotoConvert";
+                string filePath = @"\";
+                Random rnd = new Random();
+                string uploadFileName = "Imag" + rnd.Next(9999).ToString();
+                uploadStatus = Upload(url, filePath, localFilename, uploadFileName, fileNumber);
+            }
 
             if (uploadStatus)
             {
@@ -161,7 +161,6 @@ namespace PhotoConverterUI
                 sbStatus.Text = "Status: File Converted";
                 sbPathDisplay.Text = "Converted file saved od disk! (To access photo press button open saved location)";
                 Opensaved.IsEnabled = true;
-                //sbStatus.Text = "Status: Ready to convert";
             }
             else
             {
@@ -170,13 +169,11 @@ namespace PhotoConverterUI
                 // Change to status bar
                 sbStatus.Text = "Status: File not Converted";
                 sbPathDisplay.Text = "None of the files is saved on a disk!";
-                //sbStatus.Text = "Status: Ready to convert";
             }
 
             Cancelselection.IsEnabled = false;
             Convertphotos.IsEnabled = false;
         }
-
 
         // filepath = @"Some\Folder\";  
         // url= "http://localhost:52683/api/PhotoConvert";  
@@ -192,7 +189,6 @@ namespace PhotoConverterUI
 
                 var fileStream = File.Open(localFilename, FileMode.Open);
                 var fileInfo = new FileInfo(localFilename);
-                //Photoupload uploadResult = null;
                 bool _fileUploaded = false;
 
                 MultipartFormDataContent content = new MultipartFormDataContent();
@@ -230,7 +226,6 @@ namespace PhotoConverterUI
             catch (Exception ex)
             {
                 // Write empty string
-                
                 isFileUploaded = false;
             }
 
@@ -239,7 +234,6 @@ namespace PhotoConverterUI
 
         private void Opensaved_Click(object sender, RoutedEventArgs e)
         {
-            //Process.Start(uploadResult.FilePath);
             Process.Start("explorer.exe", "/select," + uploadResult.FilePath);
         }
     }
