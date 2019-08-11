@@ -42,7 +42,7 @@ namespace PhotoConverterUI
         {
             OpenFileDialog of = new OpenFileDialog();
             of.Title = "Select a picture";
-            of.Filter = "Image Files(*.JPEG; *.JPG; *.BMP; *.GIF )| *.JPEG; *.JPG; *.BMP;  *.GIF | All files(*.*) | *.*";
+            of.Filter = "Image Files(*.JPEG; *.JPG; *.BMP; *.GIF; )| *.JPEG; *.JPG; *.BMP; *.GIF; | All files(*.*) | *.*";
 
             //Check selection photo 1
             if (App.photodata.photopath.Count == 0)
