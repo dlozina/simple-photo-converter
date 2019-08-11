@@ -51,7 +51,6 @@ namespace PhotoConverterUI
                 {
                     // Save path in a class
                     App.photodata.photopath.Add(of.FileName);
-                    
                     BitmapImage firstphoto = new BitmapImage();
                     firstphoto.BeginInit();
                     firstphoto.CacheOption = BitmapCacheOption.OnLoad;
