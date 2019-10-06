@@ -35,7 +35,7 @@ namespace PhotoConverterUI
             Cancelselection.IsEnabled = false;
             Convertphotos.IsEnabled = false;
         }
-
+        // Photo upload class
         private Photoupload uploadResult = null;
 
         private void Selectphotos_Click(object sender, RoutedEventArgs e)
