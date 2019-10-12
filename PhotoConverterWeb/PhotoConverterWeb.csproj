@@ -93,6 +93,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="App_Work\ConvertPhotos.cs" />
+    <Compile Include="App_Work\FilePath.cs" />
     <Compile Include="App_Work\SaveDataApp.cs" />
     <Compile Include="Controllers\PhotoConvertController.cs" />
     <Compile Include="Global.asax.cs">

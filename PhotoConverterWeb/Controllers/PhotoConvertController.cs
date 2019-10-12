@@ -24,17 +24,17 @@ namespace PhotoConverterWebAppv2.Controllers
         }
 
         // File info class
-        public class FilePath
-        {
-            // Filename of the file 
-            public string Filename { get; set; }
-            // Path of the file on the server 
-            public string Path { get; set; }
-            // Size of the file (bytes) 
-            public long Length { get; set; }
-            // True for filename in
-            public bool IsDirectory { get; set; } 
-        }
+        //public class FilePath
+        //{
+        //    // Filename of the file 
+        //    public string Filename { get; set; }
+        //    // Path of the file on the server 
+        //    public string Path { get; set; }
+        //    // Size of the file (bytes) 
+        //    public long Length { get; set; }
+        //    // True for filename in
+        //    public bool IsDirectory { get; set; } 
+        //}
 
         public string ConvertAndClearData(string photouploadpath, bool domultipage)
         {
