@@ -1,23 +1,11 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using PhotoConverterUI.Model;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Microsoft.Win32;
-using PhotoConverterUI.Model;
-
 
 namespace PhotoConverterUI
 {
@@ -26,7 +14,6 @@ namespace PhotoConverterUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        
         private Photodata photodata;
         private OpenFileDialog of;
         private ConvertPhoto convertphoto;
@@ -54,10 +41,9 @@ namespace PhotoConverterUI
             of.Title = "Select a picture";
             of.Filter = "Image Files(*.JPEG; *.JPG; *.BMP; *.GIF; )| *.JPEG; *.JPG; *.BMP; *.GIF; | All files(*.*) | *.*";
         }
-        
+
         private void Selectphotos_Click(object sender, RoutedEventArgs e)
         {
-            
             //Check selection photo 1
             if (photodata.photopath.Count == 0)
             {
@@ -74,7 +60,7 @@ namespace PhotoConverterUI
                 {
                     photodata.AddPhotoPath(of.FileName);
                     ImgPhoto2.Source = DisplayPhoto(secondphoto);
-                }   
+                }
             }
             //Check selection photo 3
             else if (photodata.photopath.Count == 2)
@@ -83,13 +69,13 @@ namespace PhotoConverterUI
                 {
                     photodata.AddPhotoPath(of.FileName);
                     ImgPhoto3.Source = DisplayPhoto(thirdphoto);
-                }  
+                }
             }
             //Check selection photo 4
             else if (photodata.photopath.Count == 3)
             {
                 if (of.ShowDialog() == true)
-                {              
+                {
                     photodata.AddPhotoPath(of.FileName);
                     ImgPhoto4.Source = DisplayPhoto(fourthphoto);
                 }
@@ -162,7 +148,7 @@ namespace PhotoConverterUI
 
         private void Opensaved_Click(object sender, RoutedEventArgs e)
         {
-            //Process.Start("explorer.exe", "/select," + uploadResult.FilePath);
+            Process.Start("explorer.exe", "/select," + convertphoto.uploadResult.FilePath);
         }
     }
 }

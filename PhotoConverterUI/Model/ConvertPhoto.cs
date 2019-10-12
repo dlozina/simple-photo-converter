@@ -11,7 +11,7 @@ namespace PhotoConverterUI.Model
 {
     public class ConvertPhoto 
     {
-        private Photoupload uploadResult;
+        public Photoupload uploadResult;
 
         public bool ConvertFiles(int fileNumber, List<string> filespath)
         {
@@ -28,7 +28,7 @@ namespace PhotoConverterUI.Model
             return uploadStatus;   
         }
 
-        bool Upload(string url, string filePath, string localFilename, string uploadFileName, int fileNumber)
+        private bool Upload(string url, string filePath, string localFilename, string uploadFileName, int fileNumber)
         {
             Boolean isFileUploaded = false;
 
