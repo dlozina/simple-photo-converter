@@ -14,13 +14,9 @@ namespace PhotoConverterUI
     /// </summary>
     public partial class App : Application
     {
-
-        public static Photodata photodata;
-
         public App()
         {
-            photodata = new Photodata();
-            photodata.photopath = new List<string>();
+            
         }
 
     }

@@ -78,6 +78,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\ConvertPhoto.cs" />
     <Compile Include="Model\Photodata.cs" />
     <Compile Include="Model\Photoupload.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
